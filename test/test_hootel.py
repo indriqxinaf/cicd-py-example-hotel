@@ -2,6 +2,8 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 import allure
 import pytest
 
@@ -25,7 +27,7 @@ class TestHootel(object):
     @allure.severity(allure.severity_level.TRIVIAL)
     @allure.tag("login")
     def test_login(self, email, password):
-        login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
+        login_btn = WebDriverWait(self.browser, ).until(EC.element_to_be_clickable((By.XPATH, '//a[@class="nav-link"]')))
         login_btn.click()
 
         email_input = self.browser.find_element(By.ID, 'email')
