@@ -31,3 +31,20 @@ time.sleep(1)
 # BEJELENTKEZÉS SIKERESSÉGÉNEK ELLENŐRZÉSE A KILÉPÉS GOMB MEGLÉTÉVEL
 
 assert browser.find_element(By.ID, 'logout-link').is_displayed
+
+# FOGLALASOK MEGLÉTÉNEK ELLENŐRZÉSE
+
+foglalasok_btn = browser.find_element(By.ID, 'user-bookings')
+foglalasok_btn.click()
+time.sleep(1)
+
+def bookings():
+  try:
+      foglalas_kezdete_field = browser.find_elements(By.XPATH, '//div[@class="card-body"]')[0]
+      return True
+  except NoSuchElementException:
+      return False
+
+assert bookings() is True
+
+browser.quit()
