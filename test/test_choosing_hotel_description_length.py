@@ -22,7 +22,7 @@ rainbow = browser.find_element(By.XPATH, '//h4[text()="Rainbow Six Siege - szál
 rainbow.click()
 time.sleep(1)
 rainbow_loaded = browser.find_element(By.XPATH, '//h3[@class="card-title"]')
-assert rainbow_loaded.text == 'Rainbow Six Siege - szálloda':
+assert rainbow_loaded.text == 'Rainbow Six Siege - szálloda'
 
 # LEÍRÁS HOSSZÁNAK ELLENŐRZÉSE
 
