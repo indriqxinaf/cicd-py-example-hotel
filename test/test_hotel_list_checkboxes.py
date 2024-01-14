@@ -26,3 +26,10 @@ for checkbox in checkboxes:
     checkbox.click()
 
 assert checkbox.is_selected() in range(len(checkboxes))
+
+# 'Szoba szolgáltatás szűrések törlése' GOMB MŰKÖDÉSÉNEK ELLENŐRZÉSE
+
+deselect_btn = browser.find_element(By.ID, 'redstar')
+deselect_btn.click()
+
+assert not checkbox.is_selected()
